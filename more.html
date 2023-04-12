@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="post" name="form1">
+        이름을 입력하세요<input type="text" required placeholder=""><br>
+    
+        자기소개를 하세요<input type="text" placeholder="자기소개입니다.">
+        <br>
+        색상선택:<input type="color" name="color"/>
+        <br>
+        신발사이즈(230-290, 10단위)<input type="number" min="230" max="290" step="10" value="260" name="shoesize">
+        <br>
+        기술(1부터10)<input type="range" min="1" max="10" value="1"><br>
+        <input type="submit">
+        <input type="reset">
+
+    
+    </form>
+    <form action="">
+        <select name="cars">
+            <option value="BMW">BMW</option>
+            <option value="benz">BENZ</option>
+            <option value="porshe">porshe</option>
+        </select>
+    </form>
+
+    <p>선호하는 브라우저를 선택해주세요.</p>
+    <form action="process.jsp">
+        <input list="browsers" name="browser">
+        <datalist id="browsers">
+        <option value="구글 크롬">
+        <option value="엣지">
+        <option value="오페라">
+        <option value="사파리">
+        <option value="파이어폭스">
+        </datalist>
+        <input type="submit">
+    </form>
+<br><h1>2023년 1학기 중간고사 시험문제</h1>(였으면 좋겠다..)
+    <br>
+    <form>
+        <fieldset>
+            <legend>1+1의 값은?</legend>
+            <input type="radio" name="qhrl" value="1">1<br>
+            <input type="radio" name="qhrl" value="2">2<br>
+            <input type="radio" name="qhrl" value="3">3<br>
+        </fieldset>
+    </form>    
+
+</body>
+</html>
