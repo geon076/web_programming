@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p.thick{
+            border-style: solid;
+            border-width: thick;
+            border-color: green;
+        }
+        p.medium {
+            border-style: solid;
+            border-width: medium;
+            border-color: red;
+        }
+        p.thin {
+            border-style: solid;
+            border-width: 1px;
+            border-color: blue;
+        }
+        div {
+            border: 2px solid purple;
+            border-radius: 25px;
+        }
+        div1 {
+            border: 30px solid transparent;
+            width: 300px;
+            height: 50px;
+            border-image: url(border.png) 30 30 round;
+            /*Chrome*/
+        }
+    </style>
+</head>
+<body>
+    <p style="border-style: none">none</p>
+    <p style="border-style: dotted">dotted</p>
+    <p style="border-style: dashed">dashed</p>
+    <p style="border-style: solid">solid</p>
+    <p style="border-style: double">double</p>
+    <p style="border-style: groove">groove</p>
+    <p style="border-style: ridge">ridge</p>
+    <p style="border-style: inset">inset</p>
+    <p style="border-style: outset">outset</p>
+
+    <p class="thick">경계선이 thick으로 설정되었음</p>
+    <p class="medium">경계선이 medium으로 설정되었음</p>
+    <p class="thin">경계선이 thin으로 설정되었음</p>
+    <div>border-radius 속성을 사용하면 둥근 경계선을 만들 수 있습니다.</div>
+    <div1>경계 이미지가 반복되면서 그려진다.</div1>
+</body>
+</html>
