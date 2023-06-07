@@ -1,0 +1,28 @@
+.container{
+    width: 200px;
+    height: 800px;
+    background-color: blue;
+}
+.container:nth-child(1){
+    width: 10px;
+    height: 10px;
+    background-color: yellow;
+}
+.container:nth-child(2){
+    width: 140px;
+    height: 70px;
+    position: relative;
+    top: 30px;
+    left: 60px;
+    background-color: yellow;
+}
+.container:nth-child(3){
+    width: 40px;
+    height: 170px;
+    background-color: yellow;
+}
+.container:nth-child(4){
+    width: 140px;
+    height: 170px;
+    background-color: yellow;
+}
