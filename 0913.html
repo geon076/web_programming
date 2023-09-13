@@ -1,0 +1,119 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <script>
+        function checkID() {
+            let s = document.getElementById("id").value;
+            if (s.length < 6) 
+                alert("아이디는 6글자 이상이어야 합니다.");
+            if(s.includes('@')){
+            }
+            else{
+                alert("@를 입력해 주세요.");
+            }
+        }
+    </script>
+</head>
+<body>
+        아이디: <input type="text" id="id" size=10>
+        <button onclick="checkID()">검사</button>
+</body>
+</html> -->
+<!-- <script>
+        let s = 'aBcDeF';
+        let result1 = s.toLowerCase();
+        let result2 = s.toUpperCase();
+        document.write(result1 + "<br>"); 
+        document.write(result2 + "<br>"); 
+    </script> -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> -->
+        <!-- //문자열 검색 -->
+    <!-- <script>
+        let s = "A bad workman always blames his tools.";
+        let n = s.indexOf("bad");
+        document.write(n + '<br>'); // 6
+    </script> -->
+<!-- //문자열 매칭 -->
+
+<!-- <script>
+
+	let str = 'Like father, like son.';
+	// like를 찾는다. i와 g는 옵션으로 insensitive, globally를 의미한다. 
+	result = str.match(/like/ig);
+	document.write(result + '<br>'); 
+</script> -->
+
+
+
+<!-- //문자열 대체 -->
+<!-- <script>
+        let p = 'The quick brown fox jumps over the lazy dog.';\
+        document.write(r + "<br>");
+        document.write(p.replace('dog', 'cat' + "<br>"));
+        let regex = /Dog/ig;
+        document.write(p.replace(regex, 'cat'))+"<br>";
+</script> -->
+
+<!-- //문자열 분할
+<script>
+        let s = "One,Two,Three,Four,Five";
+        array = s.split(',');
+        for (i = 0; i < array.length; i++) {
+            document.write(i + '-' + array[i] + '<br>');
+        }
+</script>
+
+</body>
+</html> -->
+<!-- <!DOCTYPE html>
+<html>
+<body>
+    <p id="test">다음에 학습할 내용은 HTML입니다. </p>
+    <button onclick="strch()">HTML 학습을 끝냈으면 누르세요. </button>
+    <script>
+        function strch(){
+    let text = document.getElementById("test").innerHTML;
+    document.getElementById("test").innerHTML = text.replace("HTML", "JS");
+}
+    </script>
+</body>
+</html> -->
+<html>
+<head>
+    <script>
+        function calc(type) {
+            let x = parseFloat(document.calculator.number1.value);
+            if (type == 1)
+                y = x*x;
+            else if (type == 2)
+                y = x*x*x;
+            else if (type == 3)
+                y = x*x*x*x;
+            else if (type == 4)
+                y = (x*x)*(x*x);
+            document.calculator.total.value = y;
+        }
+    </script>
+</head>
+
+<body>
+    <form name="calculator">
+        입력:               <input type="text" name="number1"><br />
+        계산 결과:          <input type="text" name="total"><br />
+
+        <input type="button" value="제곱" onclick="calc(1);">
+        <input type="button" value="세제곱" onclick="calc(2);">
+        <input type="button" value="네제곱" onclick="calc(3);">
+        <input type="button" value="제곱의 제곱" onclick="calc(4);">
+    </form>
+
+</body>
+</html>
