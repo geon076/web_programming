@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function insert(){
+            let table = document.getElementById("a");
+            let newRow = table.insertRow();
+            let cell1 = newRow.insertCell(0);
+            let cell2 = newRow.insertCell(1);
+            cell1.innerHTML = "새로운 셀 (1,1)";
+            cell2.innerHTML = "새로운 셀 (1,2)"
+        }
+    </script>
+</head>
+<body>
+    <table id="cell" border="1">
+        <tr>
+            <td>(1,1)셀</td>
+            <td>(1,2)셀</td>
+        </tr>
+        <tr>
+            <td>(2,1)셀</td>
+            <td>(2,2)셀</td>
+        </tr>
+    </table>
+    <button onclick="insert()">god 추가</button>
+</body>
+</html>
