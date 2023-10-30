@@ -1,0 +1,133 @@
+<!--<!DOCTYPE html>
+<html>
+
+<body>
+    <div id="special" style="background-color:#faea11; width:200px; height:50px;">
+        마우스를 올려주세요!</div>
+    <script>
+        let obj = document.getElementById("special");
+        obj.onmouseover = function (e) {
+            x = e.clientX;
+            y = e.clientY;
+            alert(x + " " + y);
+            alert(e.type);
+            alert(e.target);
+        };
+    </script>
+</body>
+
+</html>-->
+<!--<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <style>
+        p,
+        div {
+            margin: 10px;
+            border: 1px solid rgb(199, 89, 25);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div1">DIV
+        <p id="p1">P</p>
+    </div>
+    <script>
+        let elem1 = document.getElementById("div1");
+        elem1.addEventListener("click", function () { alert(`캡처링 div`); },false);
+        elem1.addEventListener("click", function () { alert(`버블링 div`); }, false);
+        elem2 = document.getElementById("p1");
+        elem2.addEventListener("click", function () { alert(`캡처링 p`); },false);
+        elem2.addEventListener("click", function () { alert(`버블링 p`); },false);
+    </script>
+</body>
+
+</html>-->
+<!--<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        function changeColor(c) {
+            document.getElementById("target").style.backgroundColor = c;
+
+        }
+    </script>
+</head>
+<body id="target">
+
+    <form method="POST">
+        <input type="radio" name="C1" value="v1"
+            onclick="changeColor('lightblue')">파랑색
+        <input type="radio" name="C1" value="v2"
+            onclick="changeColor('lightgreen')">녹색
+    </form>
+</body>
+</html>-->
+<!--<html>
+<head>
+    <script>
+        function OnMouseIn(elem) 
+
+            {
+                elem.style.border = "2px solid red";
+            }
+            function OnMouseOut(elem) 
+            {
+                elem.style.border = "";
+            }
+    </script>
+</head>
+<body>
+    <div style="background-color: yellow; width: 200px"
+        onmouseover="OnMouseIn (this)" onmouseout="OnMouseOut (this)">
+        마우스를 이 요소 위에 이동하세요.
+    </div>
+</body>
+</html>-->
+<!--<html>
+<head>
+    <script>
+        function OnButtonDown(button) {
+
+                        button.style.color = "#ff0000";
+
+        }
+        function OnButtonUp(button) {
+            button.style.color = "#000000";
+        }
+    </script>
+</head>
+<body>
+    <button onmousedown="OnButtonDown (this)" onmouseup="OnButtonUp (this)">눌러보세요!</button>
+</body>-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        #div1 {
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="div1">이 텍스트 위에서 마우스 휠을 움직이면 폰트가 증가하거나 감소합니다.</div>
+    <script>
+        document.getElementById("div1").addEventListener("wheel", sub);
+        let size = 30;
+        function sub(e) {
+            if (e.wheelDelta > 0)
+                size++;
+            else
+                size--;
+            this.style.fontSize = size + "px";
+        }
+    </script>
+
+</body>
+
+</html>
