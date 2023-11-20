@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<style>
+#myCanvas {
+background-color:rgb(241, 239, 209);
+border: 1px dotted blue;
+}
+</style>
+<script>
+    function changePenColor(color) {
+        context.strokeStyle = color;
+        }
+</script>
+<body>
+<button onclick="context.clearRect(0, 0, canvas.width, canvas.height);">화면 지우기</button>
+<button onclick="changePenColor('red')">뽀</button>
+<button onclick="changePenColor('blue')">푸른</button>
+<button onclick="changePenColor('black')">검정의</button>
+<button onclick="changePenColor('yellow')">나나</button>
+<button onclick="changePenColor('purple')">보라돌이</button>
+<button onclick="changePenColor('green')">뚜비</button>
+<button onclick="changePenColor('orange')">주황</button>
+<button onclick="changePenColor('#c0c0c0')">은?</button>
+<button onclick="changePenColor('#ffd700')">금?</button><br>
+<canvas id="myCanvas" width="600" height="400"></canvas>
+<script>
+let canvas = document.getElementById("myCanvas");
+let context = canvas.getContext("2d");
+let last_x = 0, last_y = 0;
+let draw_mode = false;
+canvas.addEventListener("mousemove", function (event) {
+if (!draw_mode) return;
+let x = event.offsetX;
+let y = event.offsetY;
+context.lineTo(x, y);
+context.stroke();
+last_x = x;
+last_y = y;
+});
+canvas.addEventListener("mousedown", function (event) {
+last_x = event.offsetX;
+last_y = event.offsetY;
+context.beginPath();
+context.moveTo(last_x, last_y);
+draw_mode = true;
+});
+canvas.addEventListener("mouseup", function (event) {
+draw_mode = false;
+});
+canvas.addEventListener("mouseout", function (event) {
+draw_mode = false;
+});
+</script>
