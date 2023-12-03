@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root[color-theme='light']{
+            --background:#ffffff;
+            --text-color:#000000;
+        }/*흰 바탕에 검은 글씨를 가진 root생성*/
+
+        :root[color-theme='dark']{
+            --background:#000000;
+            --text-color:#ffffff;
+        }/*검은 바탕에 흰 글씨를 가진 root생성*/
+
+        html{
+            background: var(--background);
+            color: var(--text-color);
+            /*transition: background 0.5s, color 0.5s;, 존재의 유무로 화면이 부드럽게 전환된다*/
+        }/*html의 요소(글과 바탕)의 색을 말한다.*/
+    </style>
+    <script>
+        let det;//determination과 print에서 전부 사용하기 위해 함수 밖에 선언
+
+        function determination(){
+            let atk = parseFloat(document.getElementById('atk').value);//공격력 입력 받기
+            let power = parseFloat(document.getElementById('power').value);//기술의 위력 입력 받기
+            let attack = (atk+(31/2)+(252/8)+5)*1.1;//(종족값+ 개체값/2 + 노력치/8 + 5) * 성격보정 / 31,252,1.1 모두 각 수치의 최대 보정값
+            det = attack * power;
+
+            console.log("det");//det의 값 출력
+        }
+
+        function print(){
+            let resultElement = document.getElementById("result");
+            resultElement.innerHTML = "결정력: " + det;//변수의 값을 "결정력: det"로 정함
+        }
+
+        function change(){
+            const theme = document.documentElement.getAttribute('color-theme');
+            const newTheme = theme === 'light' ? 'dark' : 'light'; //light 태마인지 dark 태마인지 비교하여 dark이면 light로, light는 dark로 바꾼다
+            document.documentElement.setAttribute('color-theme', newTheme);
+        }
+    </script>
+</head>
+<body>
+    <h1 id="maintitle">포켓몬 결정력 계산기</h1>
+    <h4 id="ex">본 계산기는 각 캐릭터의 최대 능력치를 기준으로 하고 있음을 유의해 주시기 바랍니다.</h4>
+    <h6>만일 정확한 계산기가 필요하시다면 <a href="https://pokemoem.com/calculator">pokemoem.com/calculator</a>를 참고해주시기 바랍니다.</h6><!--유사 사이트로의 이동-->
+    <div>
+        <label for="atk">공격력:</label>
+        <input type="text" id="atk"><!--공격력 값 입력 받는 코드-->
+        <p></p>
+        <label for="power">기술의 위력:</label>
+        <input type="text" id="power"><!--기술의 위력 값 받는 코드-->
+        <p></p>
+        <button id="1st" onclick="determination(); print()">계산 결과</button>
+    </div>
+        
+    <div>
+        
+    </div>
+    <div id="result">
+    <button onclick="change()">다크모드 적용/해제</button>
+    <!--도구 표로 넘어가는 버튼-->
+    <!--타입 표로 넘어가는 버튼-->
+</body>
+</html>
